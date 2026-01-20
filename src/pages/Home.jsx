@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/LogoPageBoost (2).png";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -527,14 +529,6 @@ export default function Home() {
           gap: 15px;
         }
         
-        .author-avatar { 
-          width: 60px; 
-          height: 60px; 
-          border-radius: 50%; 
-          background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100') center/cover; 
-          border: 2px solid #FFD700;
-        }
-        
         .author-info h5 { 
           color: #fff; 
           font-size: 1.1rem; 
@@ -655,6 +649,35 @@ export default function Home() {
           cursor: pointer;
         }
         
+        .mobile-nav {
+          display: none;
+          position: fixed;
+          top: 120px;
+          left: 0;
+          right: 0;
+          background: rgba(0,0,0,0.98);
+          padding: 20px;
+          z-index: 999;
+          border-bottom: 1px solid #333;
+        }
+        
+        .mobile-nav.open {
+          display: block;
+        }
+        
+        .mobile-nav a {
+          display: block;
+          color: #ccc;
+          text-decoration: none;
+          padding: 15px 0;
+          border-bottom: 1px solid #333;
+          font-size: 1.1rem;
+        }
+        
+        .mobile-nav a:hover {
+          color: #FFD700;
+        }
+        
         /* Responsive Design */
         @media (max-width: 1024px) {
           .hero-content {
@@ -690,6 +713,10 @@ export default function Home() {
           
           .mobile-menu-btn {
             display: block;
+          }
+          
+          .mobile-nav {
+            top: 70px;
           }
           
           .contact-btn {
@@ -854,10 +881,17 @@ export default function Home() {
           </div>
           <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
             <a href="https://wa.me/5511965526709" className="contact-btn">Falar Conosco</a>
-            <button className="mobile-menu-btn">☰</button>
+            <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>☰</button>
           </div>
         </div>
       </header>
+      
+      <nav className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
+        <a href="#servicos" onClick={() => setMobileMenuOpen(false)}>Serviços</a>
+        <a href="#projetos" onClick={() => setMobileMenuOpen(false)}>Projetos</a>
+        <a href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a>
+        <a href="#contato" onClick={() => setMobileMenuOpen(false)}>Contato</a>
+      </nav>
 
       <section className="hero">
         <div className="hero-content">
@@ -1005,7 +1039,6 @@ export default function Home() {
                 A PageBoost transformou completamente nossos resultados online. Em 3 meses, aumentamos nossas conversões em 400% e o ROI superou todas as expectativas. Profissionalismo excepcional!
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-info">
                   <h5>Marina Santos</h5>
                   <p>CEO, FitLife Academy</p>
@@ -1018,7 +1051,6 @@ export default function Home() {
                 Trabalho impecável do início ao fim. A landing page criada pela PageBoost não só ficou linda, mas principalmente, está convertendo muito bem. Recomendo sem hesitar!
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar" style={{background: "url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100') center/cover"}}></div>
                 <div className="author-info">
                   <h5>Roberto Silva</h5>
                   <p>Diretor, AutoPrime</p>

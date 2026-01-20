@@ -86,7 +86,6 @@ export default function TechFlow() {
         .testimonial.show { opacity:1; transform:translateY(0) }
         .testimonial-text { font-size:1rem; color:#ccc; margin-bottom:1.5rem; font-style:italic }
         .testimonial-author { display:flex; align-items:center; gap:1rem }
-        .author-avatar { width:50px; height:50px; border-radius:50%; background:#4da6ff }
         .author-info h5 { color:#fff; font-size:1rem; margin-bottom:0.3rem }
         .author-info p { color:#888; font-size:0.85rem }
         
@@ -256,7 +255,6 @@ export default function TechFlow() {
                 "O sistema desenvolvido pela TechFlow revolucionou nossa operação. Aumentamos a produtividade em 200% e reduzimos custos significativamente."
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-info">
                   <h5>Carlos Silva</h5>
                   <p>CEO, InnovaCorp</p>
@@ -268,7 +266,6 @@ export default function TechFlow() {
                 "Profissionalismo excepcional. Entregaram exatamente o que prometeram, no prazo e com qualidade superior. Recomendo fortemente."
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-info">
                   <h5>Ana Costa</h5>
                   <p>CTO, TechStart</p>

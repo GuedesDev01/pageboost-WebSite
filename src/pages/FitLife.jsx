@@ -77,8 +77,7 @@ export default function FitLife() {
         .testimonial { background:#1a1a1a; padding:2rem; border-radius:15px; border-left:5px solid #00ff88; opacity:0; transform:translateY(30px); transition:all 0.8s ease }
         .testimonial.show { opacity:1; transform:translateY(0) }
         .testimonial-text { font-size:1rem; color:#ccc; margin-bottom:1.5rem; font-style:italic }
-        .testimonial-author { display:flex; align-items:center; gap:1rem }
-        .author-avatar { width:50px; height:50px; border-radius:50%; background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100') center/cover }
+        .testimonial-author { display:flex; align-items:center; gap:15px }
         .author-info h5 { color:#fff; font-size:1rem; margin-bottom:0.3rem }
         .author-info p { color:#888; font-size:0.9rem }
         .author-result { color:#00ff88; font-size:0.8rem; font-weight:600; margin-top:0.3rem }
@@ -224,7 +223,6 @@ export default function FitLife() {
                 Em 90 dias perdi 18kg e ganhei uma nova vida. O acompanhamento é incrível, me senti apoiada em cada passo da jornada. Hoje me olho no espelho e não acredito na transformação!
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-info">
                   <h5>Marina Santos</h5>
                   <p>Advogada, 32 anos</p>
@@ -237,7 +235,6 @@ export default function FitLife() {
                 Sempre fui sedentário e achei que nunca conseguiria. Com o FitLife descobri que é possível sim! Perdi 22kg, ganhei músculo e principalmente, ganhei saúde e qualidade de vida.
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar" style={{background: "url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100') center/cover"}}></div>
                 <div className="author-info">
                   <h5>Roberto Silva</h5>
                   <p>Engenheiro, 45 anos</p>

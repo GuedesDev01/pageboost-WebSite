@@ -100,7 +100,6 @@ export default function AutoPrime() {
         .testimonial::before { content:'"'; position:absolute; top:10px; left:20px; font-size:4rem; color:#dc2626; opacity:0.2; font-style:italic }
         .testimonial-text { font-size:1.1rem; color:#ccc; margin-bottom:25px; font-style:italic; line-height:1.7; position:relative; z-index:1 }
         .testimonial-author { display:flex; align-items:center; gap:15px }
-        .author-avatar { width:60px; height:60px; border-radius:50%; background:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100') center/cover; border:2px solid #dc2626 }
         .author-info h5 { color:#fff; font-size:1.1rem; margin-bottom:5px; font-weight:500 }
         .author-info p { color:#888; font-size:0.9rem; font-style:italic }
         .service-info { color:#dc2626; font-size:0.85rem; font-weight:500; margin-top:5px }
@@ -331,7 +330,6 @@ export default function AutoPrime() {
                 Serviço excepcional! Meu carro ficou como novo após a vitrificação. A equipe é muito profissional e o resultado superou minhas expectativas. Recomendo sem hesitar!
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-info">
                   <h5>Carlos Mendes</h5>
                   <p>Empresário</p>
@@ -344,7 +342,6 @@ export default function AutoPrime() {
                 Atendimento impecável e resultado incrível! Faço a manutenção do meu carro aqui há 2 anos e sempre saio satisfeita. Vale cada centavo investido!
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar" style={{background: "url('https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100') center/cover"}}></div>
                 <div className="author-info">
                   <h5>Ana Silva</h5>
                   <p>Advogada</p>
