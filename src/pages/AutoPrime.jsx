@@ -4,6 +4,23 @@ import { useEffect } from "react"
 export default function AutoPrime() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    const elements = document.querySelectorAll(".stat, .service, .gallery-item, .testimonial");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+    
+    return () => observer.disconnect();
   }, []);
   return (
     <>
@@ -42,6 +59,8 @@ export default function AutoPrime() {
         .stats-container { max-width:1000px; margin:0 auto }
         .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:50px; text-align:center }
         .stat { padding:30px 20px }
+        .stat { padding:30px 20px; opacity:0; transform:translateY(30px); transition:all 0.8s ease }
+        .stat.show { opacity:1; transform:translateY(0) }
         .stat h3 { font-size:3rem; color:#dc2626; margin-bottom:15px; font-weight:300 }
         .stat p { color:#ccc; font-size:1rem; text-transform:uppercase; letter-spacing:1px; font-weight:400 }
         
@@ -51,7 +70,8 @@ export default function AutoPrime() {
         .section-header h2 { font-size:3rem; color:#dc2626; margin-bottom:20px; font-weight:300; letter-spacing:1px }
         .section-header p { font-size:1.2rem; color:#888; max-width:600px; margin:0 auto; line-height:1.6; font-style:italic }
         .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px }
-        .service { background:#1a1a1a; padding:40px 30px; border-radius:12px; text-align:center; border:1px solid #333; transition:all 0.3s; position:relative }
+        .service { background:#1a1a1a; padding:40px 30px; border-radius:12px; text-align:center; border:1px solid #333; transition:all 0.3s; position:relative; opacity:0; transform:translateY(30px) }
+        .service.show { opacity:1; transform:translateY(0) }
         .service::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#dc2626; transform:scaleX(0); transition:transform 0.3s }
         .service:hover::before { transform:scaleX(1) }
         .service:hover { transform:translateY(-5px); border-color:#dc2626 }
@@ -62,7 +82,8 @@ export default function AutoPrime() {
         .gallery { padding:120px 5%; background:#111 }
         .gallery-container { max-width:1200px; margin:0 auto }
         .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:60px }
-        .gallery-item { position:relative; border-radius:12px; overflow:hidden; height:300px }
+        .gallery-item { position:relative; border-radius:12px; overflow:hidden; height:300px; opacity:0; transform:translateY(30px); transition:all 0.8s ease }
+        .gallery-item.show { opacity:1; transform:translateY(0) }
         .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.3s }
         .gallery-overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s }
         .gallery-item:hover .gallery-overlay { opacity:1 }
@@ -74,7 +95,8 @@ export default function AutoPrime() {
         .testimonials { padding:120px 5%; background:#0d0d0d }
         .testimonials-container { max-width:1000px; margin:0 auto }
         .testimonials-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:40px; margin-top:60px }
-        .testimonial { background:#1a1a1a; padding:40px; border-radius:12px; border-left:4px solid #dc2626; position:relative }
+        .testimonial { background:#1a1a1a; padding:40px; border-radius:12px; border-left:4px solid #dc2626; position:relative; opacity:0; transform:translateY(30px); transition:all 0.8s ease }
+        .testimonial.show { opacity:1; transform:translateY(0) }
         .testimonial::before { content:'"'; position:absolute; top:10px; left:20px; font-size:4rem; color:#dc2626; opacity:0.2; font-style:italic }
         .testimonial-text { font-size:1.1rem; color:#ccc; margin-bottom:25px; font-style:italic; line-height:1.7; position:relative; z-index:1 }
         .testimonial-author { display:flex; align-items:center; gap:15px }
@@ -91,15 +113,48 @@ export default function AutoPrime() {
         .final-cta:hover { background:#dc2626; color:#fff; transform:translateY(-3px) }
         
         @media (max-width:768px) {
+          .header { padding:10px 3% }
+          .header-content { flex-direction:column; gap:15px }
+          .nav-links { display:none }
+          .logo { font-size:1.5rem }
+          
+          .hero { padding:0 3%; margin-top:100px }
           .hero-container { grid-template-columns:1fr; gap:40px; text-align:center }
           .hero-text { padding-right:0 }
-          .hero-text h1 { font-size:3rem }
-          .hero-cta-group { flex-direction:column; align-items:center }
-          .stats-grid { grid-template-columns:repeat(2,1fr) }
-          .services-grid { grid-template-columns:1fr }
-          .gallery-grid { grid-template-columns:1fr }
-          .testimonials-grid { grid-template-columns:1fr }
-          .nav-links { display:none }
+          .hero-text h1 { font-size:2.5rem }
+          .hero-text p { font-size:1.1rem }
+          .hero-cta-group { flex-direction:column; align-items:center; gap:15px }
+          .premium-btn, .secondary-btn { width:100%; max-width:280px; text-align:center }
+          
+          .stats { padding:60px 3% }
+          .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px }
+          .stat h3 { font-size:2.5rem }
+          
+          .services { padding:80px 3% }
+          .section-header h2 { font-size:2rem }
+          .services-grid { grid-template-columns:1fr; gap:30px }
+          .service { margin-bottom:20px }
+          
+          .gallery { padding:80px 3% }
+          .gallery-grid { grid-template-columns:1fr; gap:25px }
+          
+          .testimonials { padding:80px 3% }
+          .testimonials-grid { grid-template-columns:1fr; gap:25px }
+          .testimonial { padding:25px }
+          
+          .cta-section { padding:60px 3% }
+          .cta-section h2 { font-size:2rem }
+          .final-cta { padding:1rem 2rem; font-size:1.1rem }
+        }
+        
+        @media (max-width:480px) {
+          .hero-text h1 { font-size:2rem }
+          .hero-text p { font-size:1rem }
+          .stats-grid { grid-template-columns:1fr; gap:20px }
+          .stat { padding:20px 10px }
+          .service { padding:25px 20px }
+          .testimonial { padding:20px }
+          .cta-section h2 { font-size:1.8rem }
         }
       `}</style>
 
