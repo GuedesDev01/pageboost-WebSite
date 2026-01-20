@@ -51,7 +51,7 @@ export default function Home() {
           backdrop-filter: blur(10px); 
           z-index: 1000; 
           border-bottom: 1px solid #333; 
-          height: 90px; 
+          height: 120px; 
           display: flex; 
           align-items: center;
         }
@@ -67,7 +67,7 @@ export default function Home() {
         }
         
         .logo { 
-          height: 60px; 
+          height: 120px; 
           width: auto;
         }
         
@@ -110,7 +110,7 @@ export default function Home() {
           background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200') center/cover; 
           display: flex; 
           align-items: center; 
-          padding: 0 5%; 
+          padding: 140px 5% 0; 
           position: relative;
         }
         
@@ -698,7 +698,7 @@ export default function Home() {
           }
           
           .hero {
-            padding: 0 3%;
+            padding: 100px 3% 0;
             min-height: 90vh;
           }
           
