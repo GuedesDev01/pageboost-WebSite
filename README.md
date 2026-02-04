@@ -1,16 +1,37 @@
-# React + Vite
+# PageBoost 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page oficial da **PageBoost**, um projeto focado na criação de sites
+modernos, rápidos e pensados para conversão.
 
-Currently, two official plugins are available:
+## 💡 Sobre o projeto
+A PageBoost nasceu com o objetivo de ajudar pessoas e pequenos negócios
+a terem presença online profissional, utilizando design moderno,
+boas práticas de desenvolvimento web e foco em performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositório representa a **versão MVP** do projeto.
 
-## React Compiler
+## 🎯 Objetivo
+- Apresentar a proposta da PageBoost
+- Validar a ideia no mercado
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias utilizadas
+- React
+- Vite
+- HTML5
+- CSS3
+- JavaScript
 
-## Expanding the ESLint configuration
+## 🌐 Acesso
+🔗 Site online: *(adicione o link quando publicar)*  
+📲 Contato para orçamentos: WhatsApp integrado na landing page
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Status do projeto
+🚧 MVP — Landing Page  
+Futuras evoluções incluem:
+- Painel administrativo
+- Área de clientes
+- Sistema completo de gestão de projetos
+
+## 👨‍💻 Autor
+Desenvolvido por **Bruno Guedes**  
+Web Developer & Founder da PageBoost
